@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Play, BookOpen, Clock, Users, Mail, Send } from "lucide-react"
 
 export default function CoursesSection() {
+  const whatsappNumber = "+3329671436"
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,7 +14,8 @@ export default function CoursesSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simular envío de email
+    // Simulación de envío de email
+    /*
     alert("¡Gracias por tu interés! Te contactaremos cuando los cursos estén disponibles.")
     setFormData({
       name: "",
@@ -21,7 +23,25 @@ export default function CoursesSection() {
       course: "",
       message: "",
     })
+    */
   }
+
+  const handleWhatsAppSend = () => {
+    const courseLabel: Record<string, string> = {
+      electronica: "Electrónica Básica",
+      arduino: "Arduino Avanzado",
+      pcb: "Diseño PCB Pro",
+      todos: "Todos los cursos"
+    };
+    const message = encodeURIComponent(
+      `Hola! Quiero información sobre cursos online:\n` +
+      `Nombre: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Curso de interés: ${courseLabel[formData.course] || "No especificado"}\n` +
+      `Mensaje: ${formData.message}`
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -96,6 +116,7 @@ export default function CoursesSection() {
             <p className="text-gray-600">Regístrate para recibir notificaciones cuando lancemos los cursos online.</p>
           </div>
 
+          {/*Formulario*/}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -150,13 +171,25 @@ export default function CoursesSection() {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-tertiary hover:bg-tertiary-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center"
-            >
-              <Send className="mr-3 h-5 w-5" />
-              Notificarme cuando esté disponible
-            </button>
+            <div className="flex flex-col gap-4">
+              {/*Botón de email (simulado)*/}
+              {/* <button
+                type="submit"
+                className="w-full bg-tertiary hover:bg-tertiary-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center"
+              >
+                <Send className="mr-3 h-5 w-5" />
+                Notificarme cuando esté disponible
+              </button> */}
+              {/*Botón de whatsapp*/}
+              <button
+                type="button"
+                onClick={handleWhatsAppSend}
+                className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center shadow-sm hover:shadow-md focus:shadow-md active:scale-[0.98]"
+              >
+                <Send className="mr-3 h-5 w-5" />
+                Enviar por WhatsApp
+              </button>
+            </div>
           </form>
         </div>
       </div>
