@@ -17,14 +17,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: 🕹 Install dependencies
         run: npm install
 
-      - name: Build static site
+      - name: 🛠 Build static site
         run: npm run build
 
-      - name: Upload via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v3
+      - name: ✈ Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
