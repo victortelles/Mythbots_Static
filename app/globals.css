@@ -12,10 +12,23 @@
   --color-tertiary: #ff6b00;
   --color-tertiary-light: #ff9840;
   --color-tertiary-dark: #c64c00;
+  --color-whatsapp: #25D366;
+  --color-gray-light: #f5f6fa;
+  --color-gray-dark: #e5e7eb;
 }
 
 .bg-primary {
   background-color: var(--color-primary);
+}
+/* WhatsApp y grises */
+.bg-whatsapp {
+  background-color: var(--color-whatsapp);
+}
+.bg-gray-light {
+  background-color: var(--color-gray-light);
+}
+.bg-gray-dark {
+  background-color: var(--color-gray-dark);
 }
 .bg-primary-light {
   background-color: var(--color-primary-light);

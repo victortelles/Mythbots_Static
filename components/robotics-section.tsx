@@ -2,15 +2,15 @@
 import { Bot, MessageCircle, GraduationCap, Users, Clock } from "lucide-react"
 
 export default function RoboticsSection() {
-  const whatsappNumber = "1234567890" // Reemplazar con el número real
+  const whatsappNumber = "+5213929415452"
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Hola! Quiero información sobre robótica educativa")
+    const message = encodeURIComponent("Hola! Quisiera saber más información sobre los cursos de robótica.")
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank")
   }
 
   return (
-    <section id="robotics" className="py-20 bg-secondary-light">
+    <section id="robotics" className="py-20 bg-primary-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-6">Robótica Educativa</h2>
