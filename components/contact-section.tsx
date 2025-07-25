@@ -15,7 +15,8 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simular envío de email
+    // Simulación de envío de email
+    /*
     alert("Mensaje enviado correctamente. Te responderemos pronto!")
     setFormData({
       name: "",
@@ -23,6 +24,7 @@ export default function ContactSection() {
       subject: "",
       message: "",
     })
+    */
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -35,6 +37,26 @@ export default function ContactSection() {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hola! Me gustaría obtener más información sobre los servicios de Mythbots")
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank")
+  }
+
+  // Enviar datos del formulario por WhatsApp
+  const handleWhatsAppForm = () => {
+    const subjectLabel: Record<string, string> = {
+      funkos: "Funkos Personalizados",
+      impresion: "Impresión 3D",
+      pcb: "Diseño PCB",
+      robotica: "Robótica Educativa",
+      cursos: "Cursos Online",
+      otro: "Otro"
+    };
+    const message = encodeURIComponent(
+      `Hola! Quiero contactar a Mythbots desde el formulario de la web:\n` +
+      `Nombre: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Asunto: ${subjectLabel[formData.subject] || "No especificado"}\n` +
+      `Mensaje: ${formData.message}`
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   }
 
   return (
@@ -56,13 +78,13 @@ export default function ContactSection() {
               <div className="flex items-start space-x-4">
                 <MessageCircle className="h-6 w-6 text-tertiary mt-1" />
                 <div>
-                  <h4 className="font-semibold mb-2">WhatsApp</h4>
-                  <p className="text-gray-200">Respuesta inmediata para consultas rápidas</p>
+                  <h4 className="font-semibold mb-2 text-tertiary">WhatsApp</h4>
+                  <p className="text-gray-100">Respuesta inmediata para consultas rápidas</p>
                   <button
                     onClick={handleWhatsAppClick}
-                    className="text-tertiary hover:text-tertiary-light transition-colors mt-2"
+                    className="text-tertiary hover:text-tertiary-light transition-colors mt-2 font-semibold"
                   >
-                    +1 (234) 567-8900
+                    3329671436
                   </button>
                 </div>
               </div>
@@ -70,13 +92,13 @@ export default function ContactSection() {
               <div className="flex items-start space-x-4">
                 <Mail className="h-6 w-6 text-tertiary mt-1" />
                 <div>
-                  <h4 className="font-semibold mb-2">Email</h4>
-                  <p className="text-gray-200">Para consultas detalladas y cotizaciones</p>
+                  <h4 className="font-semibold mb-2 text-tertiary">Email</h4>
+                  <p className="text-gray-100">Para consultas detalladas y cotizaciones</p>
                   <a
                     href="mailto:info@mythbots.com"
-                    className="text-tertiary hover:text-tertiary-light transition-colors mt-2"
+                    className="text-tertiary hover:text-tertiary-light transition-colors mt-2 font-semibold"
                   >
-                    info@mythbots.com
+                    themythbots@gmail.com
                   </a>
                 </div>
               </div>
@@ -84,53 +106,35 @@ export default function ContactSection() {
               <div className="flex items-start space-x-4">
                 <MapPin className="h-6 w-6 text-tertiary mt-1" />
                 <div>
-                  <h4 className="font-semibold mb-2">Ubicación</h4>
-                  <p className="text-gray-200">Ciudad de México, México</p>
-                  <p className="text-gray-200">Servicios disponibles en toda la república</p>
+                  {/*sea un a href con link de google maps*/}
+                  <a href="https://maps.app.goo.gl/GydYcuk5Aw8BaS3D6">
+                    <h4 className="font-semibold mb-2 text-tertiary">Ubicación</h4>
+                  </a>
+                  <p className="text-gray-100">Av Niños Héroes 2267, int 208 44190 Guadalajara, Mexico</p>
+                  <p className="text-gray-100">Servicios disponibles en toda la república</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4">
                 <Clock className="h-6 w-6 text-tertiary mt-1" />
                 <div>
-                  <h4 className="font-semibold mb-2">Horarios de Atención</h4>
-                  <p className="text-gray-200">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                  <p className="text-gray-200">Sábados: 10:00 AM - 2:00 PM</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-primary-light p-6 rounded-2xl">
-              <h4 className="font-semibold mb-4">Métodos de Contacto Preferidos</h4>
-              <div className="space-y-3 text-sm">
-                <div className="flex justify-between">
-                  <span>Funkos Personalizados:</span>
-                  <span className="text-tertiary">WhatsApp</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Impresión 3D:</span>
-                  <span className="text-tertiary">WhatsApp</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Diseño PCB:</span>
-                  <span className="text-tertiary">Formulario/Email</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Robótica Educativa:</span>
-                  <span className="text-tertiary">WhatsApp/Formulario</span>
+                  <h4 className="font-semibold mb-2 text-tertiary">Horarios de Atención</h4>
+                  <p className="text-gray-100">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                  <p className="text-gray-100">Sábados: 10:00 AM - 2:00 PM</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Formulario de contacto */}
+          {/*Formulario de contacto*/}
           <div className="bg-white p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-primary mb-6">Envíanos un Mensaje</h3>
 
+            {/*Formulario*/}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Nombre *</label>
+                  <label className="block text-sm font-medium text-primary mb-2">Nombre *</label>
                   <input
                     type="text"
                     name="name"
@@ -141,7 +145,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                  <label className="block text-sm font-medium text-primary mb-2">Email *</label>
                   <input
                     type="email"
                     name="email"
@@ -154,7 +158,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Asunto *</label>
+                <label className="block text-sm font-medium text-primary mb-2">Asunto *</label>
                 <select
                   name="subject"
                   value={formData.subject}
@@ -173,7 +177,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Mensaje *</label>
+                <label className="block text-sm font-medium text-primary mb-2">Mensaje *</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -185,12 +189,24 @@ export default function ContactSection() {
                 />
               </div>
 
+              {/*Botón de email (simulado)*/}
+              {/*
               <button
                 type="submit"
                 className="w-full bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center"
               >
                 <Send className="mr-3 h-5 w-5" />
                 Enviar Mensaje
+              </button>
+              */}
+              {/*Botón de whatsapp*/}
+              <button
+                type="button"
+                onClick={handleWhatsAppForm}
+                className="w-full bg-whatsapp hover:bg-whatsapp-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center shadow-sm hover:shadow-md focus:shadow-md active:scale-[0.98]"
+              >
+                <Send className="mr-3 h-5 w-5" />
+                Enviar por WhatsApp
               </button>
             </form>
           </div>
