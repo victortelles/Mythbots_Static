@@ -2,7 +2,7 @@
 import { Bot, MessageCircle, GraduationCap, Users, Clock } from "lucide-react"
 
 export default function RoboticsSection() {
-  const whatsappNumber = "+5213929415452"
+  const whatsappNumber = "+3329671436"
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hola! Quisiera saber más información sobre los cursos de robótica.")
