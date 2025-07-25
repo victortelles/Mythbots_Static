@@ -11,7 +11,7 @@ export default function ContactSection() {
     message: "",
   })
 
-  const whatsappNumber = "1234567890" // Reemplazar con el número real
+  const whatsappNumber = "3329671436" // Reemplazar con el número real
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -84,7 +84,7 @@ export default function ContactSection() {
                     onClick={handleWhatsAppClick}
                     className="text-tertiary hover:text-tertiary-light transition-colors mt-2 font-semibold"
                   >
-                    3329671436
+                    {whatsappNumber}
                   </button>
                 </div>
               </div>
@@ -111,7 +111,6 @@ export default function ContactSection() {
                     <h4 className="font-semibold mb-2 text-tertiary">Ubicación</h4>
                   </a>
                   <p className="text-gray-100">Av Niños Héroes 2267, int 208 44190 Guadalajara, Mexico</p>
-                  <p className="text-gray-100">Servicios disponibles en toda la república</p>
                 </div>
               </div>
 
