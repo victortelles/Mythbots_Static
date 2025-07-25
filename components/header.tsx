@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { Menu, X, Zap } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +18,8 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Zap className="h-8 w-8 text-tertiary" />
+            {/*Colocar el logotipo*/}
+            <img src="../Assets/logotipo.png" alt="Mythbots Logo" className="h-8 w-8" />
             <h1 className="text-2xl font-bold">Mythbots</h1>
           </div>
 

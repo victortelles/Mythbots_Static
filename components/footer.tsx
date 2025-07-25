@@ -1,9 +1,33 @@
 "use client"
 import { Zap, Facebook, Instagram, Twitter, Youtube, Mail, MessageCircle } from "lucide-react"
 
+// Arreglo de redes sociales
+const socialLinks = [
+  {
+    name: "Facebook",
+    icon: Facebook,
+    url: "https://www.facebook.com/profile.php?id=100093647469964#"
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    url: "https://www.instagram.com/mythbots/"
+  },
+  // {
+  //   name: "Twitter",
+  //   icon: Twitter,
+  //   url: "https://twitter.com/mythbots"
+  // },
+  // {
+  //   name: "Youtube",
+  //   icon: Youtube,
+  //   url: "https://youtube.com/@mythbots"
+  // }
+]
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const whatsappNumber = "1234567890" // Reemplazar con el número real
+  const whatsappNumber = "3329671436"
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hola! Me gustaría obtener más información sobre Mythbots")
@@ -17,7 +41,8 @@ export default function Footer() {
           {/* Logo y descripción */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <Zap className="h-8 w-8 text-tertiary" />
+              {/*Colocar imagen*/}
+              <img src="../Assets/logotipo.png" alt="Mythbots Logo" className="h-16 w-16" />
               <h3 className="text-2xl font-bold">Mythbots</h3>
             </div>
             <p className="text-gray-300 mb-6">
@@ -25,18 +50,18 @@ export default function Footer() {
               automatización.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-tertiary transition-colors">
-                <Facebook className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-tertiary transition-colors">
-                <Instagram className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-tertiary transition-colors">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-tertiary transition-colors">
-                <Youtube className="h-6 w-6" />
-              </a>
+              {socialLinks.map(({ name, icon: Icon, url }) => (
+                <a
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="text-gray-300 hover:text-tertiary transition-colors"
+                >
+                  <Icon className="h-6 w-6" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -84,17 +109,17 @@ export default function Footer() {
                 <span>WhatsApp</span>
               </button>
               <a
-                href="mailto:info@mythbots.com"
+                href="mailto:themythbots@gmail.com"
                 className="flex items-center space-x-2 text-gray-300 hover:text-tertiary transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span>info@mythbots.com</span>
+                <span>themythbots@gmail.com</span>
               </a>
             </div>
           </div>
 
           {/* Información adicional */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-4">Información</h4>
             <ul className="space-y-3 text-gray-300">
               <li>
@@ -118,7 +143,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-primary-light mt-12 pt-8">
