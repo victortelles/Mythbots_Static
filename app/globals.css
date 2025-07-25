@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #42006b;
+  --color-primary-light: #5a2094;
+  --color-primary-dark: #2c004b;
+  --color-secondary: #e01f96;
+  --color-secondary-light: #eb43ab;
+  --color-secondary-dark: #a4006b;
+  --color-tertiary: #ff6b00;
+  --color-tertiary-light: #ff9840;
+  --color-tertiary-dark: #c64c00;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+.bg-primary-dark {
+  background-color: var(--color-primary-dark);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-secondary-light {
+  background-color: var(--color-secondary-light);
+}
+.bg-secondary-dark {
+  background-color: var(--color-secondary-dark);
+}
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+.bg-tertiary-light {
+  background-color: var(--color-tertiary-light);
+}
+.bg-tertiary-dark {
+  background-color: var(--color-tertiary-dark);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+.border-tertiary {
+  border-color: var(--color-tertiary);
+}

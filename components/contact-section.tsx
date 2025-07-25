@@ -1,0 +1,201 @@
+"use client"
+import type React from "react"
+import { useState } from "react"
+import { MessageCircle, Mail, MapPin, Clock, Send } from "lucide-react"
+
+export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+
+  const whatsappNumber = "1234567890" // Reemplazar con el número real
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simular envío de email
+    alert("Mensaje enviado correctamente. Te responderemos pronto!")
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent("Hola! Me gustaría obtener más información sobre los servicios de Mythbots")
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank")
+  }
+
+  return (
+    <section id="contact" className="py-20 bg-primary">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-6">Contacto</h2>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            ¿Tienes un proyecto en mente? Estamos aquí para ayudarte a hacerlo realidad.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Información de contacto */}
+          <div className="text-white">
+            <h3 className="text-2xl font-bold mb-8">Información de Contacto</h3>
+
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start space-x-4">
+                <MessageCircle className="h-6 w-6 text-tertiary mt-1" />
+                <div>
+                  <h4 className="font-semibold mb-2">WhatsApp</h4>
+                  <p className="text-gray-200">Respuesta inmediata para consultas rápidas</p>
+                  <button
+                    onClick={handleWhatsAppClick}
+                    className="text-tertiary hover:text-tertiary-light transition-colors mt-2"
+                  >
+                    +1 (234) 567-8900
+                  </button>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Mail className="h-6 w-6 text-tertiary mt-1" />
+                <div>
+                  <h4 className="font-semibold mb-2">Email</h4>
+                  <p className="text-gray-200">Para consultas detalladas y cotizaciones</p>
+                  <a
+                    href="mailto:info@mythbots.com"
+                    className="text-tertiary hover:text-tertiary-light transition-colors mt-2"
+                  >
+                    info@mythbots.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-6 w-6 text-tertiary mt-1" />
+                <div>
+                  <h4 className="font-semibold mb-2">Ubicación</h4>
+                  <p className="text-gray-200">Ciudad de México, México</p>
+                  <p className="text-gray-200">Servicios disponibles en toda la república</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <Clock className="h-6 w-6 text-tertiary mt-1" />
+                <div>
+                  <h4 className="font-semibold mb-2">Horarios de Atención</h4>
+                  <p className="text-gray-200">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                  <p className="text-gray-200">Sábados: 10:00 AM - 2:00 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-primary-light p-6 rounded-2xl">
+              <h4 className="font-semibold mb-4">Métodos de Contacto Preferidos</h4>
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span>Funkos Personalizados:</span>
+                  <span className="text-tertiary">WhatsApp</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Impresión 3D:</span>
+                  <span className="text-tertiary">WhatsApp</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Diseño PCB:</span>
+                  <span className="text-tertiary">Formulario/Email</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Robótica Educativa:</span>
+                  <span className="text-tertiary">WhatsApp/Formulario</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Formulario de contacto */}
+          <div className="bg-white p-8 rounded-2xl">
+            <h3 className="text-2xl font-bold text-primary mb-6">Envíanos un Mensaje</h3>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Nombre *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Asunto *</label>
+                <select
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                >
+                  <option value="">Selecciona un asunto</option>
+                  <option value="funkos">Funkos Personalizados</option>
+                  <option value="impresion">Impresión 3D</option>
+                  <option value="pcb">Diseño PCB</option>
+                  <option value="robotica">Robótica Educativa</option>
+                  <option value="cursos">Cursos Online</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Mensaje *</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Cuéntanos sobre tu proyecto o consulta..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center"
+              >
+                <Send className="mr-3 h-5 w-5" />
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
