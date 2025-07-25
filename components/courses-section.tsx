@@ -53,18 +53,22 @@ export default function CoursesSection() {
   return (
     <section id="courses" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
+        {/*Titulo principal*/}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-tertiary text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
             <Play className="h-4 w-4 mr-2" />
             Próximamente
           </div>
+          {/*Titulo*/}
           <h2 className="text-4xl font-bold text-primary mb-6">Cursos Online</h2>
+          {/*Descripcion*/}
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Estamos preparando una plataforma completa de cursos online para que puedas aprender desde casa a tu propio
             ritmo.
           </p>
         </div>
 
+        {/*Cards de cursos*/}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary">
             <BookOpen className="h-12 w-12 text-primary mb-4" />
@@ -109,6 +113,7 @@ export default function CoursesSection() {
           </div>
         </div>
 
+        {/*Formulario de notificación*/}
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
           <div className="text-center mb-8">
             <Mail className="h-12 w-12 text-tertiary mx-auto mb-4" />
@@ -116,6 +121,7 @@ export default function CoursesSection() {
             <p className="text-gray-600">Regístrate para recibir notificaciones cuando lancemos los cursos online.</p>
           </div>
 
+          {/*Formulario*/}
           {/*Formulario*/}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
@@ -172,15 +178,9 @@ export default function CoursesSection() {
             </div>
 
             <div className="flex flex-col gap-4">
-              {/*Botón de email (simulado)*/}
-              {/* <button
-                type="submit"
-                className="w-full bg-tertiary hover:bg-tertiary-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center"
-              >
-                <Send className="mr-3 h-5 w-5" />
-                Notificarme cuando esté disponible
-              </button> */}
-              {/*Botón de whatsapp*/}
+              {/*Boton - email (simulado)*/}
+              {/* <button ...> ... </button> */}
+              {/*Boton - whatsapp*/}
               <button
                 type="button"
                 onClick={handleWhatsAppSend}

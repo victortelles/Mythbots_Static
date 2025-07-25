@@ -62,18 +62,24 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-primary">
       <div className="container mx-auto px-4">
+        {/*Titulo principal*/}
         <div className="text-center mb-16">
+          {/*Titulo*/}
           <h2 className="text-4xl font-bold text-white mb-6">Contacto</h2>
+          {/*Descripcion*/}
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             ¿Tienes un proyecto en mente? Estamos aquí para ayudarte a hacerlo realidad.
           </p>
         </div>
 
+        {/*Grid principal*/}
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Información de contacto */}
+          {/*Informacion de contacto*/}
           <div className="text-white">
+            {/*Titulo*/}
             <h3 className="text-2xl font-bold mb-8">Información de Contacto</h3>
 
+            {/*Lista de datos*/}
             <div className="space-y-6 mb-8">
               <div className="flex items-start space-x-4">
                 <MessageCircle className="h-6 w-6 text-tertiary mt-1" />
@@ -127,6 +133,7 @@ export default function ContactSection() {
 
           {/*Formulario de contacto*/}
           <div className="bg-white p-8 rounded-2xl">
+            {/*Titulo*/}
             <h3 className="text-2xl font-bold text-primary mb-6">Envíanos un Mensaje</h3>
 
             {/*Formulario*/}
@@ -188,17 +195,9 @@ export default function ContactSection() {
                 />
               </div>
 
-              {/*Botón de email (simulado)*/}
-              {/*
-              <button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white px-6 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center"
-              >
-                <Send className="mr-3 h-5 w-5" />
-                Enviar Mensaje
-              </button>
-              */}
-              {/*Botón de whatsapp*/}
+              {/*Boton - email (simulado)*/}
+              {/* <button ...> ... </button> */}
+              {/*Boton - whatsapp*/}
               <button
                 type="button"
                 onClick={handleWhatsAppForm}

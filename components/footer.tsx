@@ -37,18 +37,22 @@ export default function Footer() {
   return (
     <footer className="bg-primary-dark text-white">
       <div className="container mx-auto px-4 py-12">
+        {/*Grid principal*/}
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Logo y descripción */}
+          {/*Logo y descripcion*/}
           <div className="lg:col-span-1">
+            {/*Titulo*/}
             <div className="flex items-center space-x-2 mb-4">
               {/*Colocar imagen*/}
               <img src="../Assets/logotipo.png" alt="Mythbots Logo" className="h-16 w-16" />
               <h3 className="text-2xl font-bold">Mythbots</h3>
             </div>
+            {/*Descripcion*/}
             <p className="text-gray-300 mb-6">
               Innovación tecnológica a tu alcance. Especialistas en impresión 3D, diseño PCB, robótica educativa y
               automatización.
             </p>
+            {/*Redes sociales*/}
             <div className="flex space-x-4">
               {socialLinks.map(({ name, icon: Icon, url }) => (
                 <a
@@ -65,9 +69,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Servicios */}
+          {/*Servicios*/}
           <div>
+            {/*Titulo*/}
             <h4 className="text-lg font-semibold mb-4">Servicios</h4>
+            {/*Lista de servicios*/}
             <ul className="space-y-3 text-gray-300">
               <li>
                 <a href="#funkos" className="hover:text-tertiary transition-colors">
@@ -97,10 +103,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contacto rápido */}
+          {/*Contacto rapido*/}
           <div>
+            {/*Titulo*/}
             <h4 className="text-lg font-semibold mb-4">Contacto Rápido</h4>
+            {/*Botones de contacto*/}
             <div className="space-y-3">
+              {/*Boton - whatsapp*/}
               <button
                 onClick={handleWhatsAppClick}
                 className="flex items-center space-x-2 text-gray-300 hover:text-tertiary transition-colors"
@@ -108,6 +117,7 @@ export default function Footer() {
                 <MessageCircle className="h-5 w-5" />
                 <span>WhatsApp</span>
               </button>
+              {/*Boton - email*/}
               <a
                 href="mailto:themythbots@gmail.com"
                 className="flex items-center space-x-2 text-gray-300 hover:text-tertiary transition-colors"
