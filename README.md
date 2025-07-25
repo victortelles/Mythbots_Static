@@ -1,5 +1,8 @@
 # Mythbots Landing Page
 
+## Vista demo
+Visita a la pagina de https://mythbots.com/ para ver el resultado.
+
 ## Contexto sobre Mythbots
 
 Mythbots es una empresa dedicada a la educación tecnológica, la robótica y la innovación, enfocada en inspirar a jóvenes y adultos a través de experiencias de aprendizaje modernas y creativas. Su misión es acercar la tecnología y la robótica a la comunidad, ofreciendo cursos, talleres y servicios que impulsan el desarrollo de habilidades S.T.E.A.M. (Ciencia, Tecnología, Ingeniería, Arte y Matemáticas). Mythbots busca ser un referente en la formación de futuros creadores, inventores y solucionadores de problemas, promoviendo la curiosidad, el pensamiento crítico y la colaboración.
