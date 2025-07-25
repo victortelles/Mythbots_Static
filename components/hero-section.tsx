@@ -73,7 +73,7 @@ export default function HeroSection() {
           {/* Imagen del Hero */}
           <div className="relative">
             <img
-              src="../../assets/3d_print_logo.jpg"
+              src="../../Assets/3d_print_logo.jpg"
               alt="Mythbots Technology Hub"
               className="rounded-2xl shadow-2xl bg-white"
             />

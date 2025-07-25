@@ -67,7 +67,7 @@ export default function RoboticsSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/placeholder.svg?height=400&width=500&text=Robotics+Education+Workshop"
+              src="../../Assets/3d_print.jpg"
               alt="Taller de robótica educativa"
               className="rounded-2xl shadow-2xl"
             />
