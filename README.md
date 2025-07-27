@@ -2,6 +2,8 @@
 
 ## Vista demo
 Visita a la pagina de https://mythbots.com/ para ver el resultado.
+<img width="1640" height="924" alt="image" src="https://github.com/user-attachments/assets/a4cf005d-8a8d-4e4f-bacc-a90b36a3d509" />
+
 
 ## Contexto sobre Mythbots
 
